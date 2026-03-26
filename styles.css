@@ -54,6 +54,7 @@ body {
 .main-nav, .nav-cta { display: none; }
 .main-nav { gap: 1rem; }
 .main-nav a { color: var(--night); text-decoration: none; font-weight: 500; }
+.mobile-menu-btn { display: none; }
 
 .hero {
   position: relative;
@@ -405,16 +406,80 @@ h2 { font-size: clamp(1.6rem, 4.8vw, 2.6rem); color: var(--night); }
 
   .main-nav,
   .nav-cta { display: inline-flex; }
+  .mobile-menu-btn { display: none; }
 
   .mobile-sticky-cta { display: none; }
   .site-footer { padding-bottom: 1.1rem; }
 }
 
 @media (max-width: 759px) {
-  .main-nav,
+  .site-header {
+    position: absolute;
+    inset: 0 0 auto 0;
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
+  }
+  .site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 90px;
+    background: linear-gradient(180deg, rgba(8, 14, 22, 0.62) 0%, rgba(8, 14, 22, 0.04) 100%);
+    pointer-events: none;
+  }
+  .header-row {
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+  }
+  .brand { margin-inline: 0; color: #fff; }
+  .brand-mark { color: #f1c8ab; }
   .nav-cta { display: none !important; }
-  .header-row { justify-content: center; }
-  .brand { margin-inline: auto; }
+  .mobile-menu-btn {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 1px solid rgba(245, 250, 255, 0.45);
+    border-radius: 12px;
+    background: rgba(11, 19, 29, 0.46);
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .mobile-menu-btn span {
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+  }
+  .main-nav {
+    display: none !important;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(260px, 84vw);
+    background: rgba(11, 19, 29, 0.96);
+    border: 1px solid rgba(241, 200, 171, 0.25);
+    border-radius: 14px;
+    padding: 0.6rem;
+    box-shadow: 0 18px 35px rgba(3, 7, 12, 0.45);
+    z-index: 5;
+  }
+  .site-header.menu-open .main-nav {
+    display: grid !important;
+    gap: 0.25rem;
+  }
+  .main-nav a {
+    color: #eef4fc;
+    padding: 0.55rem 0.6rem;
+    border-radius: 8px;
+  }
+  .main-nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
   .hero { padding-top: 7rem; }
   .hero-inner { max-width: 94vw; }
   .hero-kicker { font-size: 1rem; margin-bottom: 0.8rem; }
