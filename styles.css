@@ -43,12 +43,12 @@ body {
 }
 .header-row {
   min-height: 72px; display: flex; align-items: center;
-  justify-content: center; gap: 0.8rem;
+  justify-content: space-between; gap: 0.8rem;
 }
 .brand {
   text-decoration: none; color: var(--night); display: inline-flex;
   align-items: center; gap: 0.55rem; font-weight: 700; letter-spacing: 0.2px;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 .brand-mark { width: 30px; height: 30px; color: var(--accent); }
 .main-nav, .nav-cta { display: none; }
@@ -385,8 +385,6 @@ h2 { font-size: clamp(1.6rem, 4.8vw, 2.6rem); color: var(--night); }
 }
 
 @media (min-width: 760px) {
-  .header-row { justify-content: space-between; }
-  .brand { margin-inline: 0; }
   .hero { padding-top: 8.4rem; }
   .hero-proof { font-size: 1rem; }
 
@@ -413,6 +411,10 @@ h2 { font-size: clamp(1.6rem, 4.8vw, 2.6rem); color: var(--night); }
 }
 
 @media (max-width: 759px) {
+  .main-nav,
+  .nav-cta { display: none !important; }
+  .header-row { justify-content: center; }
+  .brand { margin-inline: auto; }
   .hero { padding-top: 7rem; }
   .hero-inner { max-width: 94vw; }
   .hero-kicker { font-size: 1rem; margin-bottom: 0.8rem; }
