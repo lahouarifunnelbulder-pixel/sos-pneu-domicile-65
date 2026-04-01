@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accès Pro | SOS PNEUS DOMICILE 65</title>
+    <meta name="description" content="Espace pro SOS PNEUS DOMICILE 65 : connexion, inscription et suivi de vos demandes d’intervention." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="pro-page">
+    <main class="pro-shell">
+      <header class="pro-top">
+        <a href="index.html" class="brand" aria-label="Retour au site public">
+          <svg viewBox="0 0 64 64" class="brand-mark" aria-hidden="true">
+            <circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="4" />
+            <circle cx="32" cy="32" r="10" fill="none" stroke="currentColor" stroke-width="4" />
+            <path d="M32 4v10M32 50v10M4 32h10M50 32h10M11 11l7 7M46 46l7 7" stroke="currentColor" stroke-width="3" />
+          </svg>
+          <span>SOS PNEUS DOMICILE <strong>65</strong></span>
+        </a>
+        <a href="index.html" class="pro-back">← Retour au site</a>
+      </header>
+
+      <section class="pro-intro">
+        <p class="kicker">Espace Pro</p>
+        <h1>Connexion / Inscription</h1>
+        <p>Accédez à votre espace pour envoyer et suivre vos demandes d’intervention.</p>
+      </section>
+
+      <section class="pro-grid" aria-label="Formulaires espace pro">
+        <article class="pro-card">
+          <h2>Se connecter</h2>
+          <form id="login-form" novalidate>
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email" required autocomplete="email" />
+
+            <label for="login-password">Mot de passe</label>
+            <input id="login-password" name="password" type="password" minlength="6" required autocomplete="current-password" />
+
+            <button class="btn btn-call" type="submit">Se connecter</button>
+          </form>
+        </article>
+
+        <article class="pro-card">
+          <h2>Créer un compte</h2>
+          <form id="signup-form" novalidate>
+            <label for="signup-email">Email</label>
+            <input id="signup-email" name="email" type="email" required autocomplete="email" />
+
+            <label for="signup-password">Mot de passe (6 caractères min.)</label>
+            <input id="signup-password" name="password" type="password" minlength="6" required autocomplete="new-password" />
+
+            <button class="btn btn-wa" type="submit">Créer mon compte</button>
+          </form>
+        </article>
+      </section>
+
+      <p id="auth-message" class="pro-message" role="status" aria-live="polite"></p>
+    </main>
+
+    <script type="module" src="acces-pro.js"></script>
+  </body>
+</html>
