@@ -1,4 +1,9 @@
-import { loginWithEmail, registerWithEmail, observeAuthState } from './firebase.js';
+import {
+  loginWithEmail,
+  observeAuthState,
+  registerWithEmail,
+  upsertUserProfile,
+} from './firebase.js';
 
 const loginForm = document.getElementById('login-form');
 const signupForm = document.getElementById('signup-form');
@@ -57,7 +62,8 @@ signupForm?.addEventListener('submit', async (event) => {
   }
 
   try {
-    await registerWithEmail(email, password);
+    const credential = await registerWithEmail(email, password);
+    await upsertUserProfile(credential.user.uid, { email, role: 'pro' });
     setMessage('Compte créé avec succès. Redirection...', 'success');
     window.location.href = 'dashboard.html';
   } catch (error) {

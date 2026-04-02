@@ -388,6 +388,10 @@ h2 { font-size: clamp(1.6rem, 4.8vw, 2.6rem); color: var(--night); }
   color: inherit;
   opacity: 0.85;
 }
+.admin-test-link {
+  opacity: 0.62;
+  font-size: 0.88em;
+}
 
 @media (min-width: 760px) {
   .hero { padding-top: 8.4rem; }
@@ -650,6 +654,17 @@ h2 { font-size: clamp(1.6rem, 4.8vw, 2.6rem); color: var(--night); }
 
 .request-card p {
   margin: 0.35rem 0;
+}
+
+.admin-status-row {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.admin-request-card .status-select {
+  max-width: 220px;
 }
 
 .full { grid-column: 1 / -1; }

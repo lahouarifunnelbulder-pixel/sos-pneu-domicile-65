@@ -12,11 +12,15 @@ import {
 import {
   addDoc,
   collection,
+  doc,
   getFirestore,
+  getDoc,
   onSnapshot,
   orderBy,
   query,
   serverTimestamp,
+  setDoc,
+  updateDoc,
   where,
 } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js';
 
@@ -65,3 +69,26 @@ export const subscribeUserRequests = (userId, callback) => {
 
   return onSnapshot(q, callback);
 };
+
+export const upsertUserProfile = (uid, { email, role = 'pro' }) =>
+  setDoc(
+    doc(db, 'users', uid),
+    {
+      email,
+      role,
+    },
+    { merge: true }
+  );
+
+export const getUserProfile = async (uid) => {
+  const snapshot = await getDoc(doc(db, 'users', uid));
+  return snapshot.exists() ? snapshot.data() : null;
+};
+
+export const subscribeAllRequests = (callback) => {
+  const q = query(collection(db, 'requests'), orderBy('createdAt', 'desc'));
+  return onSnapshot(q, callback);
+};
+
+export const updateRequestStatus = (requestId, status) =>
+  updateDoc(doc(db, 'requests', requestId), { status });
