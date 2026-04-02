@@ -22,7 +22,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAwLLbXLGDcaoMKtnrK9YwewJpvdrFLlfy",
+  apiKey: "AIzaSyAwLLbXLGDcaomKtnrK9YwewJpvdrFLlfY",
   authDomain: "sos-pneus-domicile-65.firebaseapp.com",
   projectId: "sos-pneus-domicile-65",
   storageBucket: "sos-pneus-domicile-65.firebasestorage.app",
