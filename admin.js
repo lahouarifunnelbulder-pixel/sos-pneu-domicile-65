@@ -1,7 +1,7 @@
 import {
+  auth,
   getUserProfile,
   logoutUser,
-  observeAuthState,
   subscribeAllRequests,
   updateRequestStatus,
 } from './firebase.js';
@@ -145,7 +145,13 @@ const bindFilterEvents = () => {
   });
 };
 
-observeAuthState(async (user) => {
+const initAdminAccess = async () => {
+  // Attend explicitement la restauration de session Firebase
+  if (typeof auth.authStateReady === 'function') {
+    await auth.authStateReady();
+  }
+
+  const user = auth.currentUser;
   if (!user) {
     window.location.href = 'acces-pro.html';
     return;
@@ -165,7 +171,7 @@ observeAuthState(async (user) => {
       renderRequests();
     });
   }
-});
+};
 
 listNode?.addEventListener('change', async (event) => {
   const target = event.target;
@@ -194,3 +200,4 @@ logoutBtn?.addEventListener('click', async () => {
 });
 
 bindFilterEvents();
+initAdminAccess();
