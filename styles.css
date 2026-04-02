@@ -64,8 +64,8 @@ body {
   justify-content: center;
   padding: 7.4rem 0 0;
   background-image:
-    linear-gradient(104deg, rgba(15, 25, 38, 0.88) 12%, rgba(25, 39, 56, 0.74) 42%, rgba(35, 52, 73, 0.36) 66%, rgba(35, 52, 73, 0.1) 100%),
-    url('https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1800&q=80');
+    linear-gradient(130deg, rgba(19, 30, 44, 0.76) 6%, rgba(32, 47, 66, 0.58) 46%, rgba(210, 132, 83, 0.24) 100%),
+    url('montage-pneu-domicile-tarbes.jpg');
   background-size: cover;
   background-position: center;
   color: #edf2f8;
