@@ -1,4 +1,3 @@
-console.log("firebase.js version corrigée");
 // Firebase CDN (SDK modulaire) pour un projet HTML/CSS/JS sans npm.
 // Cette base est prête pour ajouter ensuite login, dashboard et formulaires.
 
