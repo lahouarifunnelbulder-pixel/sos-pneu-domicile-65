@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | SOS PNEUS DOMICILE 65</title>
+    <meta name="description" content="Dashboard admin SOS PNEUS DOMICILE 65 : gestion globale des demandes et statuts." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="pro-page">
+    <main class="pro-shell">
+      <header class="pro-top">
+        <a href="index.html" class="brand" aria-label="Retour au site public">
+          <svg viewBox="0 0 64 64" class="brand-mark" aria-hidden="true">
+            <circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="4" />
+            <circle cx="32" cy="32" r="10" fill="none" stroke="currentColor" stroke-width="4" />
+            <path d="M32 4v10M32 50v10M4 32h10M50 32h10M11 11l7 7M46 46l7 7" stroke="currentColor" stroke-width="3" />
+          </svg>
+          <span>SOS PNEUS DOMICILE <strong>65</strong></span>
+        </a>
+        <div class="admin-top-actions">
+          <a href="index.html" class="pro-back">← Site public</a>
+          <button id="admin-logout-btn" class="btn btn-call" type="button">Déconnexion</button>
+        </div>
+      </header>
+
+      <section class="pro-intro admin-intro">
+        <p class="kicker">Espace Admin</p>
+        <h1 id="admin-welcome">Tableau de bord administrateur</h1>
+        <p>Vue globale des demandes, filtres rapides et mise à jour de statut en temps réel.</p>
+      </section>
+
+      <section class="admin-kpi-grid" aria-label="Indicateurs des demandes">
+        <article class="kpi-card"><p>Demandes totales</p><strong id="kpi-total">0</strong></article>
+        <article class="kpi-card"><p>Envoyées</p><strong id="kpi-sent">0</strong></article>
+        <article class="kpi-card"><p>Confirmées</p><strong id="kpi-confirmed">0</strong></article>
+        <article class="kpi-card"><p>Terminées</p><strong id="kpi-done">0</strong></article>
+      </section>
+
+      <section class="pro-card admin-filters" aria-label="Filtres">
+        <h2>Filtres</h2>
+        <div class="admin-filter-grid">
+          <label>Statut
+            <select id="filter-status">
+              <option value="">Tous</option>
+              <option value="envoyée">envoyée</option>
+              <option value="confirmée">confirmée</option>
+              <option value="terminée">terminée</option>
+            </select>
+          </label>
+          <label>Urgence
+            <select id="filter-urgency">
+              <option value="">Toutes</option>
+              <option value="faible">faible</option>
+              <option value="moyenne">moyenne</option>
+              <option value="élevée">élevée</option>
+              <option value="urgence immédiate">urgence immédiate</option>
+            </select>
+          </label>
+          <label>Recherche
+            <input id="filter-search" placeholder="Entreprise, contact ou immatriculation" />
+          </label>
+        </div>
+      </section>
+
+      <section class="pro-card" aria-label="Toutes les demandes">
+        <h2>Toutes les demandes</h2>
+        <p id="admin-message" class="pro-message" role="status" aria-live="polite">Chargement des demandes...</p>
+        <div id="admin-requests-list" class="requests-list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>
