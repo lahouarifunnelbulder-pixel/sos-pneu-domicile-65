@@ -19,13 +19,49 @@
           </svg>
           <span>SOS PNEUS DOMICILE <strong>65</strong></span>
         </a>
-        <button id="admin-logout-btn" class="btn btn-call" type="button">Déconnexion</button>
+        <div class="admin-top-actions">
+          <a href="index.html" class="pro-back">← Site public</a>
+          <button id="admin-logout-btn" class="btn btn-call" type="button">Déconnexion</button>
+        </div>
       </header>
 
-      <section class="pro-intro">
+      <section class="pro-intro admin-intro">
         <p class="kicker">Espace Admin</p>
-        <h1 id="admin-welcome">Gestion des demandes</h1>
-        <p>Vision globale des demandes professionnelles et mise à jour des statuts.</p>
+        <h1 id="admin-welcome">Tableau de bord administrateur</h1>
+        <p>Vue globale des demandes, filtres rapides et mise à jour de statut en temps réel.</p>
+      </section>
+
+      <section class="admin-kpi-grid" aria-label="Indicateurs des demandes">
+        <article class="kpi-card"><p>Demandes totales</p><strong id="kpi-total">0</strong></article>
+        <article class="kpi-card"><p>Envoyées</p><strong id="kpi-sent">0</strong></article>
+        <article class="kpi-card"><p>Confirmées</p><strong id="kpi-confirmed">0</strong></article>
+        <article class="kpi-card"><p>Terminées</p><strong id="kpi-done">0</strong></article>
+      </section>
+
+      <section class="pro-card admin-filters" aria-label="Filtres">
+        <h2>Filtres</h2>
+        <div class="admin-filter-grid">
+          <label>Statut
+            <select id="filter-status">
+              <option value="">Tous</option>
+              <option value="envoyée">envoyée</option>
+              <option value="confirmée">confirmée</option>
+              <option value="terminée">terminée</option>
+            </select>
+          </label>
+          <label>Urgence
+            <select id="filter-urgency">
+              <option value="">Toutes</option>
+              <option value="faible">faible</option>
+              <option value="moyenne">moyenne</option>
+              <option value="élevée">élevée</option>
+              <option value="urgence immédiate">urgence immédiate</option>
+            </select>
+          </label>
+          <label>Recherche
+            <input id="filter-search" placeholder="Entreprise, contact ou immatriculation" />
+          </label>
+        </div>
       </section>
 
       <section class="pro-card" aria-label="Toutes les demandes">
